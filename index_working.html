@@ -2,10 +2,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DreamBooth3D</title>
-<link href="./DreamBooth_files/style.css" rel="stylesheet">
-<script type="text/javascript" src="./DreamBooth_files/jquery.mlens-1.0.min.js"></script> 
-<script type="text/javascript" src="./DreamBooth_files/jquery.js"></script>
-<script type="text/javascript" src="./DreamBooth_files/video-comparison.js"></script>
+<link href="DMC_files/style.css" rel="stylesheet">
+<script type="text/javascript" src="DMC_files/jquery.mlens-1.0.min.js"></script>
+<script type="text/javascript" src="DMC_files/jquery.js"></script>
+<script type="text/javascript" src="DMC_files/video-comparison.js"></script>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 <!-- <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script> -->
 
@@ -131,13 +131,13 @@ html {
   <span style="font-size: 24px">Google 
   </span></p>
   <br>
-  <img src="./DreamBooth_files/Teaser.png" class="teaser-gif" style="width:100%;"><br>
+  <img src="DMC_files/Teaser.png" class="teaser-gif" style="width:100%;"><br>
   <h3 style="text-align:center"><em>Personalized 3D models from just a few casual photos, with text-driven modifications.</em></h3>
     <font size="+2">
           <p style="text-align: center;">
-            <a href="./DreamBooth_files/final_paper.pdf" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="DMC_files/final_paper.pdf" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="#sum-video">[Summary Video]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./DreamBooth_files/bibtex.txt" target="_blank">[BibTeX]</a>
+            <a href="DMC_files/bibtex.txt" target="_blank">[BibTeX]</a>
           </p>
     </font>
 </div>
@@ -158,7 +158,7 @@ html {
     and returns a volumetric model (NeRF) respecting both the prompt and the subject. 
     We can use text prompts to synthesize the subjects under difference contexts.</p>
   <br>
-  <img src="./DreamBooth_files/Approach.png" style="width: 100%"> <br>
+  <img src="DMC_files/Approach.png" style="width: 100%"> <br>
   <p> In the stage-1 (left), we first partially train a DreamBooth and use the resulting model
     to optimize the initial NeRF. In stage-2 (middle), we render multi-view images along random viewpoints from the initial
     NeRF and then translate them into pseudo multi-view subject images using a fully-trained DreamBooth model. In the final
@@ -172,30 +172,30 @@ html {
   <br>
   <div class="grid">
     <div>
-      <img src="./DreamBooth_files/clusters/Img_Clusters_camdle.png" style="width:50%;" class="center"> 
+      <img src="DMC_files/clusters/Img_Clusters_camdle.png" style="width:50%;" class="center">
         <video style="width: 100%" autoplay muted loop>
-          <source src="./DreamBooth_files/vid_results/candle.mp4" type="video/mp4"> 
+          <source src="DMC_files/vid_results/candle.mp4" type="video/mp4">
         </video>
         <p style="text-align:center;">A photo of a candle</p>
     </div>
     <div>
-      <img src="./DreamBooth_files/clusters/Img_Clusters_owl.png" style="width:50%;" class="center"> 
+      <img src="DMC_files/clusters/Img_Clusters_owl.png" style="width:50%;" class="center">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/owl.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/owl.mp4" type="video/mp4">
         </video>
         <p style="text-align:center;">Photo of a wooden owl</p>
     </div>
     <div>
-      <img src="./DreamBooth_files/clusters/Img_Clusters_sloth.png" style="width:50%;" class="center"> 
+      <img src="DMC_files/clusters/Img_Clusters_sloth.png" style="width:50%;" class="center">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/sloth.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/sloth.mp4" type="video/mp4">
         </video>
         <p style="text-align:center;">A photo of a sloth plushie</p>
     </div>
     <div>
-      <img src="./DreamBooth_files/clusters/Img_Clusters_wolf.png" style="width:50%;" class="center"> 
+      <img src="DMC_files/clusters/Img_Clusters_wolf.png" style="width:50%;" class="center">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/wolf.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/wolf.mp4" type="video/mp4">
         </video>
         <p style="text-align:center;">Photo of a wolf plushie</p>
     </div>
@@ -211,35 +211,35 @@ html {
   <br>
   <div class="row">
     <div class="colum4">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_8.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_8.png" style="width:100%;">
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/vid_results/dog.gif" style="width:100%;"> 
+      <img src="DMC_files/vid_results/dog.gif" style="width:100%;">
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/vid_results/dog_glass.gif" style="width:100%;"> 
+      <img src="DMC_files/vid_results/dog_glass.gif" style="width:100%;">
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/vid_results/dog_stone.gif" style="width:100%;"> 
+      <img src="DMC_files/vid_results/dog_stone.gif" style="width:100%;">
     </div>
   </div>
 
   <div class="row">
     <div class="colum4">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_2.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_2.png" style="width:100%;">
       <p style="text-align: center;">Conditioning Images</p>
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/vid_results/dog2.gif" style="width:100%;"> 
+      <img src="DMC_files/vid_results/dog2.gif" style="width:100%;">
       <p style="text-align: center;">A photo of a dog</p>
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/vid_results/dog2_glass.gif" style="width:100%;"> 
+      <img src="DMC_files/vid_results/dog2_glass.gif" style="width:100%;">
       <p style="text-align: center;">A dog made of glass</p>
 
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/vid_results/dog2_stone.gif" style="width:100%;"> 
+      <img src="DMC_files/vid_results/dog2_stone.gif" style="width:100%;">
       <p style="text-align: center;">A stone statue of a dog</p>
 
     </div>
@@ -255,46 +255,46 @@ html {
   <br>
   <div class="row">
     <div class="colum4">
-      <img src="./DreamBooth_files/clusters/Img_clusters_bag.png" style="width:100%;"> 
+      <img src="DMC_files/clusters/Img_clusters_bag.png" style="width:100%;">
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/bag_pink.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/bag_pink.mp4" type="video/mp4">
         </video>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/bag_green.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/bag_green.mp4" type="video/mp4">
         </video>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/bag_grey.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/bag_grey.mp4" type="video/mp4">
         </video>
     </div>
   </div>
 
   <div class="row">
     <div class="colum4">
-      <img src="./DreamBooth_files/clusters/Img_Clusters_bagd.png" style="width:100%;"> 
+      <img src="DMC_files/clusters/Img_Clusters_bagd.png" style="width:100%;">
       <p style="text-align: center;">Conditioning Images</p>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/bagd_pink.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/bagd_pink.mp4" type="video/mp4">
         </video>
         <p style="text-align: center;">"Pink"</p>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/bagd_green.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/bagd_green.mp4" type="video/mp4">
         </video> 
         <p style="text-align: center;">"Green"</p>
 
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/bagd_grey.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/bagd_grey.mp4" type="video/mp4">
         </video> 
         <p style="text-align: center;">"Grey"</p>
 
@@ -310,47 +310,47 @@ html {
   <br>
   <div class="row">
     <div class="colum4">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_6.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_6.png" style="width:100%;">
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/dog6.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/dog6.mp4" type="video/mp4">
         </video>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/dog6_sleep.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/dog6_sleep.mp4" type="video/mp4">
         </video>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/dog6_jump.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/dog6_jump.mp4" type="video/mp4">
         </video>
     </div>
   </div>
 
   <div class="row">
     <div class="colum4">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_3.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_3.png" style="width:100%;">
       <p style="text-align: center;">Conditioning Images</p>
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/dog7.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/dog7.mp4" type="video/mp4">
         </video>
         <p style="text-align: center;">Photo of a dog sitting</p>
 
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/dog7_sleep.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/dog7_sleep.mp4" type="video/mp4">
         </video>
         <p style="text-align: center;">Photo of a dog sleeping</p>
 
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/dog7_jump.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/dog7_jump.mp4" type="video/mp4">
         </video>
         <p style="text-align: center;">Photo of a dog jumping</p>
 
@@ -365,14 +365,14 @@ html {
   <br>
   <div class="row">
     <div class="colum4">
-      <!-- <img src="./DreamBooth_files/dog_cluster/Dog_cluster_8.png" style="width:100%;">  -->
+      <!-- <img src="./DMC_files/dog_cluster/Dog_cluster_8.png" style="width:100%;">  -->
     </div>
     <div class="colum4">
-      <img src="./DreamBooth_files/clusters/cartoon.png" style="width:100%;"> 
+      <img src="DMC_files/clusters/cartoon.png" style="width:100%;">
     </div>
     <div class="colum4">
       <video style="width: 100%" autoplay muted loop>
-        <source src="./DreamBooth_files/vid_results/cartoon_round.mp4" type="video/mp4"> 
+        <source src="DMC_files/vid_results/cartoon_round.mp4" type="video/mp4">
         </video>
     </div>
   </div>
@@ -382,13 +382,13 @@ html {
   <h2>Text-Guided View Synthesis</h2>
   <p>Our technique can synthesized images with specified viewpoints for a subject cat (left to right: top, bottom, side and back views). Note that the generated poses are  different from the input poses, and the background changes in a realistic manner given a pose change. We also highlight the preservation of complex fur patterns on the subject cat's forehead.</p>
   <br>
-  <img class="summary-img" src="./DreamBooth_files/novel_views.png" style="width:100%;"> <br>
+  <img class="summary-img" src="./DMC_files/novel_views.png" style="width:100%;"> <br>
 </div>
 <div class="content">
   <h2>Property Modification</h2>
   <p>We show color modifications in the first row (using prompts ``a [color] [V] car''), and crosses between a specific dog and different animals in the second row (using prompts ``a cross of a [V] dog and a [target species]''). We highlight the fact that our method preserves unique visual features that give the subject its identity or essence, while performing the required property modification.</p>
   <br>
-  <img class="summary-img" src="./DreamBooth_files/property_modification.png" style="width:100%;"> <br>
+  <img class="summary-img" src="./DMC_files/property_modification.png" style="width:100%;"> <br>
 </div>-->
 <div class="content">
   <h2>Accessorization</h2>
@@ -397,77 +397,77 @@ html {
   <br>
   <div class="row">
     <div class="column">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_8.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_8.png" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/000.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/000.gif" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/002.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/002.gif" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/003.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/003.gif" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/004.gif" style="width:100%;"> 
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_1.png" style="width:100%;"> 
-    </div>
-    <div class="column">
-      <img src="./DreamBooth_files/gifs/006.gif" style="width:100%;"> 
-    </div>
-    <div class="column">
-      <img src="./DreamBooth_files/gifs/008.gif" style="width:100%;"> 
-    </div>
-    <div class="column">
-      <img src="./DreamBooth_files/gifs/009.gif" style="width:100%;"> 
-    </div>
-    <div class="column">
-      <img src="./DreamBooth_files/gifs/010.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/004.gif" style="width:100%;">
     </div>
   </div>
 
   <div class="row">
     <div class="column">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_2.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_1.png" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/012.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/006.gif" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/014.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/008.gif" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/015.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/009.gif" style="width:100%;">
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/016.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/010.gif" style="width:100%;">
     </div>
   </div>
 
   <div class="row">
     <div class="column">
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_3.png" style="width:100%;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_2.png" style="width:100%;">
+    </div>
+    <div class="column">
+      <img src="DMC_files/gifs/012.gif" style="width:100%;">
+    </div>
+    <div class="column">
+      <img src="DMC_files/gifs/014.gif" style="width:100%;">
+    </div>
+    <div class="column">
+      <img src="DMC_files/gifs/015.gif" style="width:100%;">
+    </div>
+    <div class="column">
+      <img src="DMC_files/gifs/016.gif" style="width:100%;">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="DMC_files/dog_cluster/Dog_cluster_3.png" style="width:100%;">
       <p style="text-align: center;">Conditioning Images</p>
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/024.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/024.gif" style="width:100%;">
       <p style="text-align: center;">Photo of a dog</p>
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/026.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/026.gif" style="width:100%;">
       <p style="text-align: center;">..sitting on a rainbow carpet</p>
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/027.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/027.gif" style="width:100%;">
       <p style="text-align: center;">..sitting on a purple carpet</p>
     </div>
     <div class="column">
-      <img src="./DreamBooth_files/gifs/028.gif" style="width:100%;"> 
+      <img src="DMC_files/gifs/028.gif" style="width:100%;">
       <p style="text-align: center;">..wearing a green umbrella</p>
     </div>
   </div>
@@ -478,15 +478,15 @@ html {
   <p> Meshes can be extracted from the learnt volumetric representation using marching cube, which can then be used as a traditional mesh asset in different applications and for 3D printing.</p>
   <div class="grid">
     <div>
-      <img src="./DreamBooth_files/dog_cluster/Dog_cluster_8.png" style="height:150px;"> 
+      <img src="DMC_files/dog_cluster/Dog_cluster_8.png" style="height:150px;">
       <p style="text-align: center;">Conditioning Images</p>
     </div>
     <div>
-      <img src="./DreamBooth_files/gifs/005.gif" style="height:150px;">
+      <img src="DMC_files/gifs/005.gif" style="height:150px;">
       <p style="text-align: center;">Rendered NeRF</p>
     </div>
     <div>
-      <img src="./DreamBooth_files/clusters/Img_Clusters_print.png" style="height:150px;"> 
+      <img src="DMC_files/clusters/Img_Clusters_print.png" style="height:150px;">
       <p style="text-align: center;">3D printed asset</p>
     </div>
     <div>
@@ -511,7 +511,7 @@ html {
   <p>Results for text based 3D asset generation conditioned on casual captures. The assets below are generated using the text prompt "A photograh of < object >". 
     Where < object > is the subject repesented in the exemplar images. The first column presents the exemplar images used to update our T2I model. 
     The second and third column shows two rendered views from the learnt volume. The last three columns shows the depth, normals and alpha maps for the second rendered view. </p>
-<img class="summary-img" src="./DreamBooth_files/Dreambooth_geom.png" style="width:100%;">
+<img class="summary-img" src="DMC_files/Dreambooth_geom.png" style="width:100%;">
 </div>
 <!-- <div class="content">
   <h2>Societal Impact</h2>
