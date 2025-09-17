@@ -126,56 +126,15 @@ html {
 <body>
 <div class="content">
   <h1><strong>DMC: Training-Free Video Diffusion Acceleration via Direction-Magnitude Cooperation</strong></h1>
-  <br>
-      <font size="+2">
-          <p style="text-align: center;">
-            <a href="http://arxiv.org/abs/xxx" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#sum-video">[GitHub]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#bib">[BibTeX]</a>
-          </p>
-    </font>
+  <br><br>
+<!--      <font size="+2">-->
+<!--          <p style="text-align: center;">-->
+<!--            <a href="http://arxiv.org/abs/xxx" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--            <a href="#sum-video">[GitHub]</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--            <a href="#bib">[BibTeX]</a>-->
+<!--          </p>-->
+<!--    </font>-->
 <!--  <img src="teaser_fig.gif" class="teaser-gif" style="width:100%;" loop=infinite><br>-->
-  <div class="row">
-    <div class="colum4">
-      <video style="width: 100%" autoplay muted loop>
-        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">
-        </video>
-      <p style="text-align: center;">(1) Large Model Sample</p>
-    </div>
-    <div class="colum4">
-      <video style="width: 100%" autoplay muted loop>
-        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">
-        </video>
-      <p style="text-align: center;">(2) TeaCache Model Sample</p>
-    </div>
-    <div class="colum4">
-      <video style="width: 100%" autoplay muted loop>
-        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">
-        </video>
-      <p style="text-align: center;">(3) SRD Model Sample</p>
-    </div>
-    <div class="colum4">
-      <video style="width: 100%" autoplay muted loop>
-        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">
-        </video>
-      <p style="text-align: center;">(4) Our Sample</p>
-    </div>
-  </div>
-</div>
-<div class="content">
-  <h2>Abstract</h2>
-  <p>Diffusion Transformer (DiT)-based video generation achieves impressive performance but suffers from high computational overhead.
-    Recently, the large-small model collaboration inference strategy has shown promise in accelerating inference.
-    However, the small model’s limited capacity can cause deviations from the large model’s denoising trajectory, resulting in suboptimal visual retention.
-    In this paper, through empirical analysis, we find that such deviations mainly stem from directional rather than magnitude discrepancies, and that reusing the large model’s prior directional information allows accurate directional estimation.
-    Building on this insight, we propose DMC, which leverages direction-magnitude collaboration to accelerate inference.
-    Specifically, we combine the complementary advantages of the small model’s accurate magnitude estimation with prior directional information to correct directional deviations.
-    Moreover, since the magnitude remains consistent under classifier-free guidance (CFG), the inference latency of the small model can be further halved by reusing the magnitude information.
-    As a result, DMC achieves the dual benefits of visual retention and reduced inference cost through calibrated lightweight small model inference.
-    Extensive experiments show that DMC outperforms existing acceleration methods, providing a 2.95X speedup on Wan2.1 while keeping video quality comparable to the baseline.</p>
-</div>
-
-<div class="content">
   <h2>Video Gallery</h2>
   <p>prompt1: XXXX.</p>
   <br>
@@ -234,49 +193,122 @@ html {
       <p style="text-align: center;">Ours</p>
     </div>
   </div>
-
 </div>
+<!--<div class="content">-->
+<!--  <h2>Abstract</h2>-->
+<!--  <p>Diffusion Transformer (DiT)-based video generation achieves impressive performance but suffers from high computational overhead.-->
+<!--    Recently, the large-small model collaboration inference strategy has shown promise in accelerating inference.-->
+<!--    However, the small model’s limited capacity can cause deviations from the large model’s denoising trajectory, resulting in suboptimal visual retention.-->
+<!--    In this paper, through empirical analysis, we find that such deviations mainly stem from directional rather than magnitude discrepancies, and that reusing the large model’s prior directional information allows accurate directional estimation.-->
+<!--    Building on this insight, we propose DMC, which leverages direction-magnitude collaboration to accelerate inference.-->
+<!--    Specifically, we combine the complementary advantages of the small model’s accurate magnitude estimation with prior directional information to correct directional deviations.-->
+<!--    Moreover, since the magnitude remains consistent under classifier-free guidance (CFG), the inference latency of the small model can be further halved by reusing the magnitude information.-->
+<!--    As a result, DMC achieves the dual benefits of visual retention and reduced inference cost through calibrated lightweight small model inference.-->
+<!--    Extensive experiments show that DMC outperforms existing acceleration methods, providing a 2.95X speedup on Wan2.1 while keeping video quality comparable to the baseline.</p>-->
+<!--</div>-->
 
-<div class="content">
-  <h2>Methodology</h2>
-  <p> In this study, we explore the relationship between the directional and magnitude components of
-model outputs across different-scale models within the same model family. Our empirical find-
-ings reveal that, for the denoising process of the same latent variable at the same time step: (1) in
-terms of direction, the large model’s output aligns more closely with that obtained through residual
-reuse, while deviating more noticeably from the small model’s output direction; and (2) in terms
-of magnitude, the large model’s output is comparable to that of the small model but deviates more
-substantially from the magnitude estimated via residual reuse. In short, the large model resembles
-the small model in output magnitude, yet aligns more closely with residual reuse in output direction.<br><br>
-    Building on these insights, we propose DMC, a novel method to accelerate diffusion inference
-through direction-magnitude cooperation. Specifically, DMC combines the strengths of small-model
-magnitude estimation with residual reuse from large-model for directional estimation. In this way,
-DMC refines the small model’s directional predictions to more closely align with those of the large
-model, while replacing the large model’s computationally intensive inference with a lightweight al-
-ternative. To prevent the accumulation of directional errors caused by residual reuse, DMC employs
-the small model as a proxy to monitor error growth continuously and adaptively switches to the large
-model when necessary, thereby ensuring timely directional correction. Moreover, the comparable
-magnitudes of conditional and unconditional predictions under CFG enable effective reuse, which
-can additionally reduce the small model’s inference cost by half. Extensive experiments demonstrate
-the effectiveness of DMC, showing that it can achieve higher acceleration rates while maintaining
-high visual retention.<br><br>
-    In summary, our contributions are as follows:<br><br>
-    1) We analyze the large-small model collaboration strategy and discover that directly replacing the
-large model’s predictions with those of the small model deviates from the original denoising tra-
-jectory, resulting in reduced visual retention.<br><br>
-    2) We empirically find that, within the same model family, small models can reliably estimate the
-magnitude of outputs from large models, while leveraging cached residuals from large models
-provides a robust approximation of output direction.<br><br>
-    3) We propose DMC, a training-free acceleration method that uses directional information from large
-model residual reuse to calibrate a small model’s predictions, improving its approximation of the
-large model while replacing costly inference. DMC also introduces CFG-Reuse, reducing the
-small model’s inference cost by half while maintaining performance.<br><br>
-    4) Extensive experiments across various video diffusion models demonstrate that our DMC out-
-performs the current state-of-the-art acceleration strategies, achieving significant speedup while
-maintaining faithful visual fidelity.
-  </p>
-  <br>
-<!--  <img src="./DMC_files/Approach.png" style="width: 100%"> <br>-->
-</div>
+<!--<div class="content">-->
+<!--  <h2>Video Gallery</h2>-->
+<!--  <p>prompt1: XXXX.</p>-->
+<!--  <br>-->
+<!--  <div class="row">-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">Large</p>-->
+<!--    </div>-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">TeaCache</p>-->
+<!--    </div>-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">SRD</p>-->
+<!--    </div>-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">Ours</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <br><br><br>-->
+<!--  <p>prompt2: XXXX.</p>-->
+<!--  <br>-->
+<!--  <div class="row">-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">Large</p>-->
+<!--    </div>-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">TeaCache</p>-->
+<!--    </div>-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">SRD</p>-->
+<!--    </div>-->
+<!--    <div class="colum4">-->
+<!--      <video style="width: 100%" autoplay muted loop>-->
+<!--        <source src="./DMC_files/vid_results/bag_pink.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--      <p style="text-align: center;">Ours</p>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+
+<!--<div class="content">-->
+<!--  <h2>Methodology</h2>-->
+<!--  <p> In this study, we explore the relationship between the directional and magnitude components of-->
+<!--model outputs across different-scale models within the same model family. Our empirical find- -->
+<!--ings reveal that, for the denoising process of the same latent variable at the same time step: (1) in-->
+<!--terms of direction, the large model’s output aligns more closely with that obtained through residual-->
+<!--reuse, while deviating more noticeably from the small model’s output direction; and (2) in terms-->
+<!--of magnitude, the large model’s output is comparable to that of the small model but deviates more-->
+<!--substantially from the magnitude estimated via residual reuse. In short, the large model resembles-->
+<!--the small model in output magnitude, yet aligns more closely with residual reuse in output direction.<br><br>-->
+<!--    Building on these insights, we propose DMC, a novel method to accelerate diffusion inference-->
+<!--through direction-magnitude cooperation. Specifically, DMC combines the strengths of small-model-->
+<!--magnitude estimation with residual reuse from large-model for directional estimation. In this way,-->
+<!--DMC refines the small model’s directional predictions to more closely align with those of the large-->
+<!--model, while replacing the large model’s computationally intensive inference with a lightweight al- -->
+<!--ternative. To prevent the accumulation of directional errors caused by residual reuse, DMC employs-->
+<!--the small model as a proxy to monitor error growth continuously and adaptively switches to the large-->
+<!--model when necessary, thereby ensuring timely directional correction. Moreover, the comparable-->
+<!--magnitudes of conditional and unconditional predictions under CFG enable effective reuse, which-->
+<!--can additionally reduce the small model’s inference cost by half. Extensive experiments demonstrate-->
+<!--the effectiveness of DMC, showing that it can achieve higher acceleration rates while maintaining-->
+<!--high visual retention.<br><br>-->
+<!--    In summary, our contributions are as follows:<br><br>-->
+<!--    1) We analyze the large-small model collaboration strategy and discover that directly replacing the-->
+<!--large model’s predictions with those of the small model deviates from the original denoising tra- -->
+<!--jectory, resulting in reduced visual retention.<br><br>-->
+<!--    2) We empirically find that, within the same model family, small models can reliably estimate the-->
+<!--magnitude of outputs from large models, while leveraging cached residuals from large models-->
+<!--provides a robust approximation of output direction.<br><br>-->
+<!--    3) We propose DMC, a training-free acceleration method that uses directional information from large-->
+<!--model residual reuse to calibrate a small model’s predictions, improving its approximation of the-->
+<!--large model while replacing costly inference. DMC also introduces CFG-Reuse, reducing the-->
+<!--small model’s inference cost by half while maintaining performance.<br><br>-->
+<!--    4) Extensive experiments across various video diffusion models demonstrate that our DMC out- -->
+<!--performs the current state-of-the-art acceleration strategies, achieving significant speedup while-->
+<!--maintaining faithful visual fidelity.-->
+<!--  </p>-->
+<!--  <br>-->
+<!--&lt;!&ndash;  <img src="./DMC_files/Approach.png" style="width: 100%"> <br>&ndash;&gt;-->
+<!--</div>-->
 
 
 
